@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<OrderedTest name="orderedtest1" storage="c:\users\brenda\documents\visual studio 2012\projects\converter\converterunittesting\orderedtest1.orderedtest" id="634e221d-8702-4132-a88b-bbb140ec60da" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <TestLinks>
-    <TestLink id="a9c589b7-6294-ce9d-5b98-b5b31dd1b22e" name="TestingNumbersToText" storage="bin\debug\converterunittesting.exe" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  </TestLinks>
-</OrderedTest>

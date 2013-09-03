@@ -2,13 +2,13 @@
 using ConverterController;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ConverterUnitTesting
+namespace TestingConverter
 {
     /// <summary>
     /// Test Class to evaluate the performance of the program.
     /// </summary>
     [TestClass]
-    public class NumberToText_Stress
+    public class NumberToText_Performance
     {
         /// <summary>
         /// Testing the performance of the application based on a generation of random numbers.
@@ -16,17 +16,24 @@ namespace ConverterUnitTesting
         [TestMethod]
         public void TestingPerformance()
         {
-            string resultPath = "PerformanceResult.txt";
-            using (System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(resultPath))
+            try
             {
-                DecimalRandom decimalRandom = new DecimalRandom();
-                for (int i = 0; i <= 100; i++)
+                string resultPath = "ConverterPerformanceResults.txt";
+                using (System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(resultPath))
                 {
-                    decimal randomNumber = decimalRandom.NextDecimal();
-                    string randomDecimal = Convert.ToString(randomNumber);
-                    string randomDecimalInText = Number.ToText(Convert.ToString(randomNumber));
-                    streamWriter.WriteLine(randomDecimal + " " + randomDecimalInText);
+                    DecimalRandom decimalRandom = new DecimalRandom();
+                    for (int i = 0; i <= 10000; i++)
+                    {
+                        decimal randomNumber = decimalRandom.NextDecimal();
+                        string randomDecimal = Convert.ToString(randomNumber);
+                        string randomDecimalInText = Number.ToText(Convert.ToString(randomNumber));
+                        streamWriter.WriteLine(randomDecimal + " " + randomDecimalInText);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Performace test error.");
             }
         }
     }
@@ -34,7 +41,7 @@ namespace ConverterUnitTesting
     /// <summary>
     /// Class to generate random decimals 
     /// </summary>
-    /// <remarks>This function was extracted from the following link. </remarks>
+    /// <remarks>This function was extracted from the following link and it was modified to cover my needs. </remarks>
     /// <see cref="http://stackoverflow.com/questions/609501/generating-a-random-decimal-in-c-sharp"/>
     public class DecimalRandom : Random
     {
@@ -51,7 +58,11 @@ namespace ConverterUnitTesting
             //A power of 10 ranging from 0 to 28. 
             byte scale = Convert.ToByte(this.Next(29));
             Decimal randomDecimal = new Decimal(lo, mid, hi, isNegative, scale);
-            return randomDecimal;
+
+            string decimalText =randomDecimal.ToString("#.##");
+            decimal truncatedDecimal = 0;
+            Decimal.TryParse(decimalText, out truncatedDecimal);
+            return truncatedDecimal;
         }
     }
 }

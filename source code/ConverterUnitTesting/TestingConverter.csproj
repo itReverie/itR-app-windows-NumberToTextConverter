@@ -6,8 +6,8 @@
     <ProjectGuid>{0A7F1D14-62EA-4464-BDCE-8CC2E3C335AD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConverterUnitTesting</RootNamespace>
-    <AssemblyName>ConverterUnitTesting</AssemblyName>
+    <RootNamespace>TestingConverter</RootNamespace>
+    <AssemblyName>TestingConverter</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -16,7 +16,8 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\JobApplications\August\TechnologyOne\Stage3-ProgramApplication\BrendaJimenez-ChequeConverter\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,10 +27,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -52,6 +53,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>749163723A88A30AA5B5C27DCCC5200882B76938</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ConverterUnitTesting_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -80,9 +93,12 @@
       <DependentUpon>ConverterUI.cs</DependentUpon>
     </Compile>
     <Compile Include="ConverterTesting.cs" />
-    <Compile Include="NumbersDictionary.cs" />
+    <Compile Include="TestingData_Decimals.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NumberText.cs" />
+    <Compile Include="NumberToText_Integers.cs" />
+    <Compile Include="NumberToText_Decimals.cs" />
+    <Compile Include="NumberToText_Performance.cs" />
+    <Compile Include="TestingData_Integers.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Converter\Converter.csproj">
@@ -113,9 +129,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="OrderedTest1.orderedtest">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ConverterUnitTesting_TemporaryKey.pfx" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

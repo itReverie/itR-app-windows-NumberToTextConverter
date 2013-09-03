@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConverterUnitTesting
+namespace TestingConverter
 {
     /// <summary>
     /// Class that contains the data to test different scenarios in the unit testing
     /// </summary>
-    public static class TestingData
+    public static class TestingData_Integers
     {
         #region Data_To_TestRanges
         /// <summary>
         /// Collection of values within the range of a decimal type
         /// </summary>
-        public static Dictionary<string, string> GetCollectionRanges()
+        public static Dictionary<string, string> GetCollectionRangesIntegers()
         {
             Dictionary<string, string> listScalesNumbers = new Dictionary<string, string>();
             listScalesNumbers.Add("1.0", "one dollars and zero cents");
@@ -54,12 +54,11 @@ namespace ConverterUnitTesting
         /// Collection of values out of the boundaries of a decimal type
         /// </summary>
         /// <returns></returns>
-        public static List<string> GetListRangesOutOfBoundaries()
+        public static List<string> GetListRangesOutOfBoundariesIntegers()
         {
             List<string> listScalesOutOfBoundaries = new List<string>();
             listScalesOutOfBoundaries.Add("99999999999999999999999999999.0");
             listScalesOutOfBoundaries.Add("-99999999999999999999999999999.0");
-            listScalesOutOfBoundaries.Add("123.45e+6");
             return listScalesOutOfBoundaries;
         }
         #endregion
@@ -68,7 +67,7 @@ namespace ConverterUnitTesting
         /// <summary>
         /// Collection of incorrect input values
         /// </summary>
-        public static List<string> GetListIncorrectInputs()
+        public static List<string> GetListIncorrectInputsIntegers()
         {
             List<string> listIncorrectInputs = new List<string>();
             listIncorrectInputs.Add("");
@@ -77,20 +76,21 @@ namespace ConverterUnitTesting
             listIncorrectInputs.Add("/*-");
             listIncorrectInputs.Add("+36.98");
             listIncorrectInputs.Add("+895.36");
-            listIncorrectInputs.Add("895.+36");
-            listIncorrectInputs.Add("895.-36");
+            listIncorrectInputs.Add("895.+6");
+            listIncorrectInputs.Add("895.-3");
             listIncorrectInputs.Add("15.96.48");
             listIncorrectInputs.Add("مرحبا!");
             listIncorrectInputs.Add("指事字");
             listIncorrectInputs.Add("-1E-16");
             listIncorrectInputs.Add("-10d");
+            listIncorrectInputs.Add("123.45e+6");
             return listIncorrectInputs;
         }
 
         /// <summary>
         /// Collection of correct input values
         /// </summary>
-        public static Dictionary<string, string> GetCollectionCorrectInputs()
+        public static Dictionary<string, string> GetCollectionCorrectInputsIntegers()
         {
             Dictionary<string, string> collectionCorrectInputs = new Dictionary<string, string>();
             collectionCorrectInputs.Add("1.0", "one dollars and zero cents");
@@ -108,7 +108,7 @@ namespace ConverterUnitTesting
         /// <summary>
         /// Collection of some correct random values
         /// </summary>
-        public static Dictionary<string, string> GetCollectionRandomValues()
+        public static Dictionary<string, string> GetCollectionRandomValuesIntegers()
         {
             Dictionary<string, string> collectionRandomValues = new Dictionary<string, string>();
             collectionRandomValues.Add("9.0", "nine dollars and zero cents");
@@ -131,7 +131,7 @@ namespace ConverterUnitTesting
         /// <summary>
         /// Collection of some correct random values with zeros 
         /// </summary>
-        public static Dictionary<string, string> GetCollectionZeroValues()
+        public static Dictionary<string, string> GetCollectionZeroValuesIntegers()
         {
             Dictionary<string, string> collectionZeroValues = new Dictionary<string, string>();
             collectionZeroValues.Add("0", "zero dollars and zero cents");

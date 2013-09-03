@@ -4,7 +4,7 @@ using System.IO;
 using ConverterController;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ConverterUnitTesting
+namespace TestingConverter
 {
     /// <summary>
     /// Test Class for the integer values on the converter program
@@ -19,12 +19,12 @@ namespace ConverterUnitTesting
         /// <remarks>The maximum and minimum values are based on the decimal type -> 16 bytes (28 significant digits)
         /// For the purpose of this excercise we are considering octillion(Math.Pow(10,27)) as maximum.</remarks>
         [TestMethod]
-        public void ValidRangeValues()
+        public void IntegerValidRangeValues()
         {
             try
             {
                 Number numberClass = new Number();
-                Dictionary<string, string> collectionRanges = TestingData.GetCollectionRanges();
+                Dictionary<string, string> collectionRanges = TestingData_Integers.GetCollectionRangesIntegers();
                 foreach (KeyValuePair<string, string> range in collectionRanges)
                 {
                     string actual_value = numberClass.TestCallToText(range.Key);
@@ -42,11 +42,11 @@ namespace ConverterUnitTesting
         /// </summary>
         /// <remarks>The main focus of this test is to exceed the ranges allowed</remarks>
         [TestMethod]
-        public void InvalidRangeValues()
+        public void IntegersInvalidRangeValues()
         {
          try{   
                 Number numberClass = new Number();
-                List<string> listRangesOutOfBoundaries = TestingData.GetListRangesOutOfBoundaries();
+                List<string> listRangesOutOfBoundaries = TestingData_Integers.GetListRangesOutOfBoundariesIntegers();
                 foreach (string incorrectInput in listRangesOutOfBoundaries)
                 {
                     try{
@@ -68,12 +68,12 @@ namespace ConverterUnitTesting
         /// Test some possible combinations of valid inputs.
         /// </summary>
         [TestMethod]
-        public void CorrectInputs()
+        public void IntegersCorrectInputs()
         {
             try
             {
                 Number numberClass = new Number();
-                Dictionary<string, string> collectionCorrectInputs = TestingData.GetCollectionCorrectInputs();
+                Dictionary<string, string> collectionCorrectInputs = TestingData_Integers.GetCollectionCorrectInputsIntegers();
                 foreach (KeyValuePair<string,string> correctInput in collectionCorrectInputs)
                 {
                     string actual_value = numberClass.TestCallToText(correctInput.Key);
@@ -91,12 +91,12 @@ namespace ConverterUnitTesting
         /// </summary>
         /// <remarks>Incorrect values like: special characters, symbols and incorrect formats.</remarks>
         [TestMethod]
-        public void IncorrectInputs()
+        public void IntegersIncorrectInputs()
         {
             try
             {
                 Number numberClass = new Number();
-                List<string> listIncorrectInputs = TestingData.GetListIncorrectInputs();
+                List<string> listIncorrectInputs = TestingData_Integers.GetListIncorrectInputsIntegers();
                 foreach (string incorrectInput in listIncorrectInputs)
                 {
                     try
@@ -122,12 +122,12 @@ namespace ConverterUnitTesting
         /// </summary>
         /// <remarks>The main focus is the corect generation of scales.(million, billion,etc.)</remarks>
         [TestMethod]
-        public void TestingRandomValues()
+        public void IntegersTestingRandomValues()
         {
             try
             {
                 Number numberClass = new Number();
-                Dictionary<string, string> collectionRandomValues = TestingData.GetCollectionRandomValues();
+                Dictionary<string, string> collectionRandomValues = TestingData_Integers.GetCollectionRandomValuesIntegers();
                 foreach (KeyValuePair<string, string> randomValue in collectionRandomValues)
                 {
                     string actual_value = numberClass.TestCallToText(randomValue.Key);
@@ -145,12 +145,12 @@ namespace ConverterUnitTesting
         /// </summary>
         /// <remarks>Based on the logic of sets of three, the validation of the correct position to determine the value of the important is relevant.</remarks>
         [TestMethod]
-        public void TestingZeroValuesOnIntegers()
+        public void IntegersTestingZeroValues()
         {
             try
             {
                 Number numberClass = new Number();
-                Dictionary<string, string> collectionZeroValues = TestingData.GetCollectionZeroValues();
+                Dictionary<string, string> collectionZeroValues = TestingData_Integers.GetCollectionZeroValuesIntegers();
                 foreach (KeyValuePair<string, string> zeroValue in collectionZeroValues)
                 {
                     string actual_value = numberClass.TestCallToText(zeroValue.Key);

@@ -28,7 +28,12 @@ namespace ConverterController
         /// <summary>
         /// The number is not in a valid range 
         /// </summary>
-        public static string Reason_ValueOutOfBoundaries = "The program accepts positive and negative values with 27 positions as integers.";
+        public static string Reason_IntegerOutOfBoundaries = "The program accepts positive and negative values with a maximum of 28 positions as integer and 3 decimals.";
+
+        /// <summary>
+        /// The decimals are not in a valid range 
+        /// </summary>
+        public static string Reason_DecimalOutOfBoundaries = "The program accepts a maximum of two decimals.";
 
     }
 }

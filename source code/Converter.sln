@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter", "Converter\Converter.csproj", "{B3951F6F-C749-4B17-9496-62A5B2230AF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterUnitTesting", "ConverterUnitTesting\ConverterUnitTesting.csproj", "{0A7F1D14-62EA-4464-BDCE-8CC2E3C335AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingConverter", "ConverterUnitTesting\TestingConverter.csproj", "{0A7F1D14-62EA-4464-BDCE-8CC2E3C335AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
