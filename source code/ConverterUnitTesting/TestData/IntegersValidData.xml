@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestData>
+  <!-- Random Valid Integer Values -->
+  <ValidIntegerValues>
+    <Number>9.0</Number>
+    <Text>nine dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>990.0</Number>
+    <Text>nine hundred ninety dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>9090.0</Number>
+    <Text>nine thousand ninety dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>90909.0</Number>
+    <Text>ninety thousand nine hundred nine dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>909090.0</Number>
+    <Text>nine hundred nine thousand ninety dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>9090909.0</Number>
+    <Text>nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>90909090.0</Number>
+    <Text>ninety million nine hundred nine thousand ninety dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>909090909.0</Number>
+    <Text>nine hundred nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>9090909090.0</Number>
+    <Text>nine billion ninety million nine hundred nine thousand ninety dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>90909090909.0</Number>
+    <Text>ninety billion nine hundred nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>909090909090.0</Number>
+    <Text>nine hundred nine billion ninety million nine hundred nine thousand ninety dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>9090909090909.0</Number>
+    <Text>nine trillion ninety billion nine hundred nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>90909090909090.0</Number>
+    <Text>ninety trillion nine hundred nine billion ninety million nine hundred nine thousand ninety dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>9909090909090909090909090909.0</Number>
+    <Text>nine octillion nine hundred nine septillion ninety sextillion nine hundred nine quintillion ninety quadrillion nine hundred nine trillion ninety billion nine hundred nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+  </ValidIntegerValues>
+
+
+  <!-- Random Valid Integers with Zero Values -->
+  <ValidIntegerValuesWithZeros>
+    <Number>0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+  <ValidIntegerValuesWithZeros>
+    <Number>00.0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+  <ValidIntegerValuesWithZeros>
+    <Number>02.0</Number>
+    <Text>two dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+  <ValidIntegerValuesWithZeros>
+    <Number>000.0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+  <ValidIntegerValuesWithZeros>
+    <Number>000000.0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+  <ValidIntegerValuesWithZeros>
+    <Number>0000000000.0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+  <ValidIntegerValuesWithZeros>
+    <Number>101.0</Number>
+    <Text>one hundred one dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+  <ValidIntegerValuesWithZeros>
+    <Number>1001.0</Number>
+    <Text>one thousand one dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+  <ValidIntegerValuesWithZeros>
+    <Number>10000000000001.0</Number>
+    <Text>ten trillion one dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+  <ValidIntegerValuesWithZeros>
+    <Number>10000000000000000000000000001.0</Number>
+    <Text>ten octillion one dollars and zero cents</Text>
+  </ValidIntegerValuesWithZeros>
+
+</TestData>

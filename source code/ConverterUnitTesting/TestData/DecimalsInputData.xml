@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestData>
+  <!-- Incorrect Input Values -->
+  <InvalidInputs>
+    <Number>.</Number>
+  </InvalidInputs>
+  <InvalidInputs>
+    <Number>0.asadsf</Number>
+  </InvalidInputs>
+  <InvalidInputs>
+    <Number>0./*-</Number>
+  </InvalidInputs>
+  <InvalidInputs>
+    <Number>0.+9</Number>
+  </InvalidInputs>
+  <InvalidInputs>
+    <Number>895.-3</Number>
+  </InvalidInputs>
+  <InvalidInputs>
+    <Number>15.96.48</Number>
+  </InvalidInputs>
+  <InvalidInputs>
+    <Number>مرحبا!</Number>
+  </InvalidInputs>
+  <InvalidInputs>
+    <Number>指事字</Number>
+  </InvalidInputs>
+    
+  <!-- Correct Input Values-->
+  <ValidInputs>
+    <Number>1.0</Number>
+    <Text>one dollars and zero cents</Text>
+  </ValidInputs>
+  <ValidInputs>
+    <Number>0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidInputs>
+  <ValidInputs>
+    <Number>0.</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidInputs>
+  <ValidInputs>
+    <Number>.0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidInputs>
+  <ValidInputs>
+    <Number>0.5</Number>
+    <Text>zero dollars and fifty cents</Text>
+  </ValidInputs>
+  <ValidInputs>
+    <Number>0.50</Number>
+    <Text>zero dollars and fifty cents</Text>
+  </ValidInputs>
+  <ValidInputs>
+    <Number>0.05</Number>
+    <Text>zero dollars and five cents</Text>
+  </ValidInputs>
+  
+</TestData>

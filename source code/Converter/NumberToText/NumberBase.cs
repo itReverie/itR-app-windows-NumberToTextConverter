@@ -1,47 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using Converter;
 
-namespace ConverterController
+namespace Converter
 {
     /// <summary>
-    /// Converts numbers into its corresponding text. 
+    /// Abstract class to be used as a based to convert a number to text in different langauges.
     /// </summary>
-    /// <example>Converts 125.25 in one hundred twenty five dollars and twenty five cents </example>
-    public class Number
+    abstract class NumberBase
     {
-        #region Methods
+        #region Constructor
+        public NumberBase()
+        {
+            //LoadResources(new CultureInfo("en-US"));
+        }
+
+        public NumberBase(CultureInfo culture)
+        {
+            NumbersDictionary.LoadNumbers(culture);
+            ErrorMessagesDictionary.LoadErrorsText(culture);
+        }
+        #endregion 
+
+        #region PublicMethods
         /// <summary>
         /// Converts any number including decimals into the correpsonding text.
         /// </summary>
-        /// <param name="inputNumber">Any positive number including decimals.</param>
-        /// <returns>The corresponding text for the value of the number.</returns>
-        public static string ToText(string inputNumber)
+        /// <param name="inputNumber">Any positive adn negative number including decimals.</param>
+        /// <returns>The corresponding text for the input number.</returns>
+        public virtual string ToText(string inputNumber)
         {
             string outputText = string.Empty;
             decimal tryingtoZero = 0;
-            Number number = new Number();
-            EnglishDictionary.LoadNumbers();
-            string moneyValue = EnglishDictionary.Dollars;
-            
+
+            if (inputNumber == "")
+            {
+                throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_IncorrectFormat);
+            }
+
             //Getting sets of numbers: integers and decimals
-            if (inputNumber == ""){
-                throw new IOException(EnglishErrorMessages.Error_InvalidInput + " " + EnglishErrorMessages.Reason_IncorrectFormat);
-            }
             List<string> setNumbers = inputNumber.Split(new char[] { '.' }).ToList();
-            if (setNumbers.Count > 2 || (setNumbers[0] == "" && setNumbers[1]=="")){
-                throw new IOException(EnglishErrorMessages.Error_InvalidInput + " " + EnglishErrorMessages.Reason_IncorrectFormat);
+            if (setNumbers.Count > 2 || (setNumbers[0] == "" && setNumbers[1] == ""))
+            {
+                throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_IncorrectFormat);
             }
+
             //Setting a correct List
-            if (setNumbers.Count == 1){
+            if (setNumbers.Count == 1)
+            {
                 setNumbers.Add("0");
             }
 
-            for(int i=0; i <setNumbers.Count();i++)
+            string moneyValue = NumbersDictionary.Dollars;
+
+            for (int i = 0; i < setNumbers.Count(); i++)
             {
                 //Initializing the sets with zero if there is no valid value
                 if (setNumbers[i] == "") { setNumbers[i] = "0"; }
@@ -49,71 +65,78 @@ namespace ConverterController
                 //Validations for the first set: integers
                 if (i == 0)
                 {
-                    if (!Regex.IsMatch(setNumbers[i], "^-[0-9]+$|^[0-9]+$")){
-                        throw new IOException(EnglishErrorMessages.Error_InvalidInput + " " + EnglishErrorMessages.Reason_OnlyNumericDigits);}
+                    if (!Regex.IsMatch(setNumbers[i], "^-[0-9]+$|^[0-9]+$"))
+                    {
+                        throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_OnlyNumericDigits);
+                    }
 
-                    if (setNumbers[i].StartsWith("-")){
+                    if (setNumbers[i].StartsWith("-"))
+                    {
                         setNumbers[i] = setNumbers[i].Remove(0, 1);
-                        outputText = EnglishDictionary.Minus;
-                    }else if (setNumbers[i].StartsWith("+")){
-                        setNumbers[i] = setNumbers[i].Remove(0, 1);}
+                        outputText = NumbersDictionary.Minus;
+                    }
+                    else if (setNumbers[i].StartsWith("+"))
+                    {
+                        setNumbers[i] = setNumbers[i].Remove(0, 1);
+                    }
                 }
 
                 //Validations for the second set : decimals
-                else if (i == 1){
-                    if (!Regex.IsMatch(setNumbers[i], "^[0-9]+$")){
-                        throw new IOException(EnglishErrorMessages.Error_InvalidInput + " " + EnglishErrorMessages.Reason_OnlyNumericDigits);}
-                    if (setNumbers[i].Length > 2){
-                        throw new ArgumentOutOfRangeException(EnglishErrorMessages.Error_InvalidInput + " " + EnglishErrorMessages.Reason_DecimalOutOfBoundaries);}
+                else if (i == 1)
+                {
+                    if (!Regex.IsMatch(setNumbers[i], "^[0-9]+$"))
+                    {
+                        throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_OnlyNumericDigits);
+                    }
+                    if (setNumbers[i].Length > 2)
+                    {
+                        throw new ArgumentOutOfRangeException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_DecimalOutOfBoundaries);
+                    }
 
-                    outputText += moneyValue + EnglishDictionary.And;
-                    moneyValue = EnglishDictionary.Cents;
+                    outputText += moneyValue + NumbersDictionary.And;
+                    moneyValue = NumbersDictionary.Cents;
                     //Filling in the set with 000 to the right just for a max of two decimals
-                    if (setNumbers[i].Length == 1){
-                        setNumbers[i] = setNumbers[i].Insert(setNumbers[i].Length, "0");}
+                    if (setNumbers[i].Length == 1)
+                    {
+                        setNumbers[i] = setNumbers[i].Insert(setNumbers[i].Length, "0");
+                    }
                 }
-                
+
                 //Trying to convert the set to a valid number
-                if (!decimal.TryParse(setNumbers[i], out tryingtoZero)){
+                if (!decimal.TryParse(setNumbers[i], out tryingtoZero))
+                {
                     //Its a number out of bundaries
-                    throw new ArgumentOutOfRangeException(EnglishErrorMessages.Error_InvalidInput + " " + EnglishErrorMessages.Reason_IntegerOutOfBoundaries);}
+                    throw new ArgumentOutOfRangeException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_IntegerOutOfBoundaries);
+                }
                 //If it's zero just print zero and skip the iteration
-                if (tryingtoZero == 0){
-                   setNumbers[i] = "0";
-                   outputText += "zero ";
-                }else{//Start the iteration of sets
-                   outputText += number.IterationOfSets(setNumbers[i]);}
+                if (tryingtoZero == 0)
+                {
+                    setNumbers[i] = "0";
+                    outputText += "zero ";
+                }
+                else
+                {//Start the iteration of sets
+                    outputText += IterationOfSets(setNumbers[i]);
+                }
             }
             return outputText + moneyValue.Trim();
         }
-
-
-        /// <summary>
-        /// Converts any number including decimals into the correpsonding text.
-        /// </summary>
-        /// <param name="inputNumber">Any positive number including decimals.</param>
-        /// <returns>The corresponding text for the value of the number.</returns>
-        /// <remarks>This method is mainly to test the STATIC method in the Unit Testing. </remarks>
-        public string TestCallToText(string inputNumber)
-        {
-            return ToText(inputNumber);
-        }
         #endregion
 
-        #region PrivateMethods
-      
+        #region ConversionMethods
+
         /// <summary>
         /// Iterates the input number in sets of three digits representing Trillion-Billion-Million-Thousands-Hundreds
         /// </summary>
         /// <param name="number">Set of numbers to be converted in text.</param>
         /// <returns>Text corresponding to the set of numbers.</returns>
-        private string IterationOfSets(string number)
+        protected virtual string IterationOfSets(string number)
         {
-            List<string> listScaleTypeText = EnglishDictionary.ScaleNumbers;
+            List<string> listScaleTypeText = NumbersDictionary.ScaleNumbers;
 
-            string ouputtext=string.Empty;
+            string ouputtext = string.Empty;
             string setNumberString = number;
-            
+
             double numberLenght = (double)number.Length;
             double totalSets = Math.Ceiling(numberLenght / 3);
 
@@ -130,14 +153,15 @@ namespace ConverterController
                 if (setPosition < numberLenght)
                 {
                     setNumberString = number.Substring(setPosition, valuesToTake);
-                    setNumberInt =  Convert.ToInt32(setNumberString);
+                    setNumberInt = Convert.ToInt32(setNumberString);
                     setPosition = setPosition + valuesToTake;
-                    scalePosition = Convert.ToInt32(totalSets-1) - set;
-                    if (setNumberInt > 0){
+                    scalePosition = Convert.ToInt32(totalSets - 1) - set;
+                    if (setNumberInt > 0)
+                    {
                         ouputtext = IterationOfNumbers(setNumberString.Length, setNumberInt, ouputtext) + listScaleTypeText[scalePosition];
                     }
                 }
-                
+
             }
             return ouputtext;
         }
@@ -149,34 +173,41 @@ namespace ConverterController
         /// <param name="number">Number</param>
         /// <param name="outputText">Number in text format.</param>
         /// <returns>Number in text format.</returns>
-        private string IterationOfNumbers(int position, decimal number, string outputText)
+        protected virtual string IterationOfNumbers(int position, decimal number, string outputText)
         {
             decimal nextNumber = 0;
             //Validation for 0
-            if (number == 0 && outputText.Length > 0){
+            if (number == 0 && outputText.Length > 0)
+            {
                 return outputText;
             }
             switch (ValidateNumberPosition(position, number))
             {
                 case 1: //Number from 0-9
-                    outputText += NumberToText(number, EnglishDictionary.NaturalTeenNumbers);
+                    outputText += NumberToText(number, NumbersDictionary.NaturalTeenNumbers);
                     return outputText;
                 case 2: //Number from 10-99
-                    if (number < 20){
+                    if (number < 20)
+                    {
                         //Number from 10-19
-                        outputText += NumberToText(number, EnglishDictionary.NaturalTeenNumbers);
+                        outputText += NumberToText(number, NumbersDictionary.NaturalTeenNumbers);
                         return outputText;
-                    }else{
+                    }
+                    else
+                    {
                         //Number from 20-99
-                        outputText += NumberToText((number/10), EnglishDictionary.TenNumbers);
+                        outputText += NumberToText((number / 10), NumbersDictionary.TenNumbers);
                         nextNumber = number % 10;
                         return IterationOfNumbers(position - 1, nextNumber, outputText);
                     }
                 case 3://Number from 100-999
-                    if (number >= 100){
-                        outputText += NumberToText(number / 100, EnglishDictionary.NaturalTeenNumbers) + NumberToText(10, EnglishDictionary.TenNumbers);
+                    if (number >= 100)
+                    {
+                        outputText += NumberToText(number / 100, NumbersDictionary.NaturalTeenNumbers) + NumberToText(10, NumbersDictionary.TenNumbers);
                         nextNumber = number % 100;
-                    }else{
+                    }
+                    else
+                    {
                         nextNumber = number;
                     }
                     return IterationOfNumbers(position - 1, nextNumber, outputText);
@@ -192,7 +223,7 @@ namespace ConverterController
         /// <param name="setPosition">Set position</param>
         /// <param name="numberLenght">Lenght of the number</param>
         /// <returns>Number of position to take in the number.</returns>
-        private int ValidateSetPosition(int setPosition, string number)
+        protected virtual int ValidateSetPosition(int setPosition, string number)
         {
             int valuesToTake = 0;
             double reminder = 0;
@@ -209,7 +240,9 @@ namespace ConverterController
                 //It has TWO digits
                 else { valuesToTake = 2; }
 
-            }else{
+            }
+            else
+            {
                 //Take three digits to create a set.
                 valuesToTake = 3;
             }
@@ -226,10 +259,11 @@ namespace ConverterController
         /// Number=02, Posotion=2 (XXX-->X02), Correct Position=1 (XXX-->XX2)
         /// If we remove this validation 02 will return twenty instead of two
         /// </example>
-        private int ValidateNumberPosition(int numberPosition, decimal number)
+        protected virtual int ValidateNumberPosition(int numberPosition, decimal number)
         {
-            double numberGraterZero = Convert.ToDouble(number)/ Math.Pow(10, numberPosition - 1);
-            if (numberGraterZero < 1)            {
+            double numberGraterZero = Convert.ToDouble(number) / Math.Pow(10, numberPosition - 1);
+            if (numberGraterZero < 1)
+            {
                 numberPosition = number.ToString().Length;
             }
             return numberPosition;
@@ -241,12 +275,23 @@ namespace ConverterController
         /// <param name="number">Number to be converted in text.</param>
         /// <param name="numbersCollection">Collection to look for the number.</param>
         /// <returns>Number in text format.</returns>
-        private string NumberToText(decimal numberInput, Dictionary<int, string> numbersCollection)
+        protected virtual string NumberToText(decimal numberInput, Dictionary<int, string> numbersCollection)
         {
-
             int test = Convert.ToInt16(Math.Floor(numberInput));
             string numberInText = numbersCollection.Where(number => number.Key == test).Select(number => number.Value).FirstOrDefault();
             return numberInText;
+        }
+        #endregion
+
+        #region ResourceMethods
+        /// <summary>
+        /// Loads the numbers and errors resources
+        /// </summary>
+        /// <param name="culture">Culture to load the resources</param>
+        protected virtual void LoadResources(CultureInfo culture)
+        {
+            NumbersDictionary.LoadNumbers(culture);
+            ErrorMessagesDictionary.LoadErrorsText(culture);
         }
         #endregion
     }

@@ -3,9 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter", "Converter\Converter.csproj", "{B3951F6F-C749-4B17-9496-62A5B2230AF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingConverter", "ConverterUnitTesting\TestingConverter.csproj", "{0A7F1D14-62EA-4464-BDCE-8CC2E3C335AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterUnitTesting", "ConverterUnitTesting\ConverterUnitTesting.csproj", "{0A7F1D14-62EA-4464-BDCE-8CC2E3C335AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterResources", "ConverterResources\ConverterResources.csproj", "{7EF20B18-0825-4603-AFAF-2A1AF2240E15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterUI", "ConverterUI\ConverterUI.csproj", "{DD00AF46-3A51-45FD-9C45-377CC382D14F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9A074772-3B77-46F0-8AD0-95B2E8E327F5}"
+	ProjectSection(SolutionItems) = preProject
+		Converter.vsmdi = Converter.vsmdi
+		ConverterTestSettings.testsettings = ConverterTestSettings.testsettings
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Converter.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -19,6 +32,14 @@ Global
 		{0A7F1D14-62EA-4464-BDCE-8CC2E3C335AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A7F1D14-62EA-4464-BDCE-8CC2E3C335AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A7F1D14-62EA-4464-BDCE-8CC2E3C335AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF20B18-0825-4603-AFAF-2A1AF2240E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF20B18-0825-4603-AFAF-2A1AF2240E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF20B18-0825-4603-AFAF-2A1AF2240E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF20B18-0825-4603-AFAF-2A1AF2240E15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD00AF46-3A51-45FD-9C45-377CC382D14F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD00AF46-3A51-45FD-9C45-377CC382D14F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD00AF46-3A51-45FD-9C45-377CC382D14F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD00AF46-3A51-45FD-9C45-377CC382D14F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

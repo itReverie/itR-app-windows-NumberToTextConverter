@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestData>
+  <!-- Random Valid Decimal Values -->
+  <ValidDecimalValues>
+    <Number>0.9</Number>
+    <Text>zero dollars and ninety cents</Text>
+  </ValidDecimalValues>
+  <ValidDecimalValues>
+    <Number>0.09</Number>
+    <Text>zero dollars and nine cents</Text>
+  </ValidDecimalValues>
+  <ValidDecimalValues>
+    <Number>0.23</Number>
+    <Text>zero dollars and twenty three cents</Text>
+  </ValidDecimalValues>
+  <ValidDecimalValues>
+     <Number>0.03</Number>
+     <Text>zero dollars and three cents</Text>
+  </ValidDecimalValues>
+  <ValidDecimalValues>
+     <Number>0.55</Number>
+     <Text>zero dollars and fifty five cents</Text>
+  </ValidDecimalValues>
+  
+  <!-- Random Valid Decimals with Zero Values -->
+  <ValidDecimalValuesWithZeros>
+    <Number>0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidDecimalValuesWithZeros>
+  <ValidDecimalValuesWithZeros>
+    <Number>73.00</Number>
+    <Text>seventy three dollars and zero cents</Text>
+  </ValidDecimalValuesWithZeros>
+  <ValidDecimalValuesWithZeros>
+    <Number>02.08</Number>
+    <Text>two dollars and eight cents</Text>
+  </ValidDecimalValuesWithZeros>
+  <ValidDecimalValuesWithZeros>
+    <Number>80706050403021.14</Number>
+    <Text>eighty trillion seven hundred six billion fifty million four hundred three thousand twenty one dollars and fourteen cents</Text>
+  </ValidDecimalValuesWithZeros>
+  <ValidDecimalValuesWithZeros>
+    <Number>-780000460000054600075470001.58</Number>
+    <Text>minus seven hundred eighty septillion four hundred sixty quintillion fifty four trillion six hundred billion seventy five million four hundred seventy thousand one dollars and fifty eight cents</Text>
+  </ValidDecimalValuesWithZeros>
+
+</TestData>

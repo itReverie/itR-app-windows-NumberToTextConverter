@@ -4,10 +4,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0A7F1D14-62EA-4464-BDCE-8CC2E3C335AD}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestingConverter</RootNamespace>
-    <AssemblyName>TestingConverter</AssemblyName>
+    <RootNamespace>ConverterUnitTesting</RootNamespace>
+    <AssemblyName>ConverterUnitTesting</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -32,6 +32,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +43,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,6 +52,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -66,6 +69,7 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -86,30 +90,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ConverterUI.cs">
-      <SubType>Form</SubType>
+    <Compile Include="NumberTester.cs" />
+    <Compile Include="TestMethods\NumberToText_Culture.cs" />
+    <Compile Include="TestMethods\NumberToText_Decimals.cs">
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ConverterUI.Designer.cs">
-      <DependentUpon>ConverterUI.cs</DependentUpon>
+    <Compile Include="TestMethods\NumberToText_Integers.cs">
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ConverterTesting.cs" />
-    <Compile Include="TestingData_Decimals.cs" />
+    <Compile Include="TestMethods\NumberToText_Performance.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NumberToText_Integers.cs" />
-    <Compile Include="NumberToText_Decimals.cs" />
-    <Compile Include="NumberToText_Performance.cs" />
-    <Compile Include="TestingData_Integers.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Converter\Converter.csproj">
-      <Project>{b3951f6f-c749-4b17-9496-62a5b2230af4}</Project>
-      <Name>Converter</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ConverterUI.resx">
-      <DependentUpon>ConverterUI.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -129,8 +121,33 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ConverterUnitTesting_TemporaryKey.pfx" />
+    <ProjectReference Include="..\Converter\Converter.csproj">
+      <Project>{b3951f6f-c749-4b17-9496-62a5b2230af4}</Project>
+      <Name>Converter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestData\DecimalsInputData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\DecimalsRangeData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\DecimalsValidData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\IntegersInputData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\IntegersRangeData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\IntegersValidData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\SpanishData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

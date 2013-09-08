@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Converter.ErrorMessagesDictionary">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAgCAQBAAAAAAAAAAAAAAAAACAAAABAAAABAAAg=</HashCode>
+      <FileName>Dictionaries\ErrorMessagesDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Converter.NumbersDictionary">
+    <Position X="0.5" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>YAAAAAAAAAAAKAAIEAACQAADAAGAAEAAAAAABAABAAA=</HashCode>
+      <FileName>Dictionaries\NumbersDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Converter.Number">
+    <Position X="6.5" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NumberToText\Number.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Converter.NumberBase">
+    <Position X="6.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAIAQAAABAAEAAAAgAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>NumberToText\NumberBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Converter.NumberEnglish">
+    <Position X="5.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NumberToText\NumberEnglish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Converter.NumberSpanish">
+    <Position X="8" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NumberToText\NumberSpanish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

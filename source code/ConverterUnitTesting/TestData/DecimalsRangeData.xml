@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TestData>
+
+  <!-- Invalid Range Values-->
+  <InvalidRanges>
+    <Number>0.000</Number>
+  </InvalidRanges>
+  <InvalidRanges>
+    <Number>0.999</Number>
+  </InvalidRanges>
+
+  <!-- Valid Range Values-->
+  <ValidRanges>
+    <Number>0.</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>.0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>0.0</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>0.00</Number>
+    <Text>zero dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>0.99</Number>
+    <Text>zero dollars and ninety nine cents</Text>
+  </ValidRanges>
+</TestData>

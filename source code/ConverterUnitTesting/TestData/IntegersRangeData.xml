@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TestData>
+
+  <!-- Invalid Range Values-->
+  <InvalidRanges>
+    <Number>99999999999999999999999999999.0</Number>
+  </InvalidRanges>
+  <InvalidRanges>
+    <Number>-99999999999999999999999999999.0</Number>
+  </InvalidRanges>
+  
+  <!-- Valid Range Values-->
+  <ValidRanges>
+    <Number>1.0</Number>
+    <Text>one dollars and zero cents</Text>
+    </ValidRanges>
+  <ValidRanges>
+     <Number>10.0</Number>
+     <Text>ten dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+      <Number>100.0</Number>
+      <Text>one hundred dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>1000.0</Number>
+    <Text>one thousand dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>10000.0</Number>
+    <Text>ten thousand dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>100000.0</Number>
+    <Text>one hundred thousand dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>1000000.0</Number>
+    <Text>one million dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>10000000.0</Number>
+    <Text>ten million dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>100000000.0</Number>
+    <Text>one hundred million dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>1000000000.0</Number>
+    <Text>one billion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>10000000000.0</Number>
+    <Text>ten billion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>100000000000.0</Number>
+    <Text>one hundred billion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>1000000000000.0</Number>
+    <Text>one trillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>10000000000000.0</Number>
+    <Text>ten trillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>100000000000000.0</Number>
+    <Text>one hundred trillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>1000000000000000.0</Number>
+    <Text>one quadrillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>10000000000000000.0</Number>
+    <Text>ten quadrillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>100000000000000000.0</Number>
+    <Text>one hundred quadrillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>1000000000000000000.0</Number>
+    <Text>one quintillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>10000000000000000000.0</Number>
+    <Text>ten quintillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>100000000000000000000.0</Number>
+    <Text>one hundred quintillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>1000000000000000000000.0</Number>
+    <Text>one sextillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>10000000000000000000000.0</Number>
+    <Text>ten sextillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>100000000000000000000000.0</Number>
+    <Text>one hundred sextillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>1000000000000000000000000.0</Number>
+    <Text>one septillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>10000000000000000000000000.0</Number>
+    <Text>ten septillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>100000000000000000000000000.0</Number>
+    <Text>one hundred septillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>1000000000000000000000000000.0</Number>
+    <Text>one octillion dollars and zero cents</Text>
+  </ValidRanges>
+  <ValidRanges>
+    <Number>10000000000000000000000000000.0</Number>
+    <Text>ten octillion dollars and zero cents</Text>
+  </ValidRanges>
+  
+</TestData>

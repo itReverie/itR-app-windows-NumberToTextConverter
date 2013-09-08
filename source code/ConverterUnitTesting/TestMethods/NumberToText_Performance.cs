@@ -1,8 +1,8 @@
 ﻿using System;
-using ConverterController;
+using ConverterUnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestingConverter
+namespace ConverterUnitTesting
 {
     /// <summary>
     /// Test Class to evaluate the performance of the program.
@@ -19,6 +19,7 @@ namespace TestingConverter
             try
             {
                 string resultPath = "ConverterPerformanceResults.txt";
+                NumberTester numberTester = new NumberTester();
                 using (System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(resultPath))
                 {
                     DecimalRandom decimalRandom = new DecimalRandom();
@@ -26,8 +27,8 @@ namespace TestingConverter
                     {
                         decimal randomNumber = decimalRandom.NextDecimal();
                         string randomDecimal = Convert.ToString(randomNumber);
-                        string randomDecimalInText = Number.ToText(Convert.ToString(randomNumber));
-                        streamWriter.WriteLine(randomDecimal + " " + randomDecimalInText);
+                        string randomDecimalInText = numberTester.ToText(Convert.ToString(randomNumber));
+                        streamWriter.WriteLine(randomDecimal + "\t\t\t" + randomDecimalInText);
                     }
                 }
             }
@@ -59,6 +60,7 @@ namespace TestingConverter
             byte scale = Convert.ToByte(this.Next(29));
             Decimal randomDecimal = new Decimal(lo, mid, hi, isNegative, scale);
 
+            //Setting the number to 2 decimals
             string decimalText =randomDecimal.ToString("#.##");
             decimal truncatedDecimal = 0;
             Decimal.TryParse(decimalText, out truncatedDecimal);
