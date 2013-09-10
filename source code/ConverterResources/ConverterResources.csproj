@@ -92,11 +92,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Numbers.es-MX.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Numbers.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Numbers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

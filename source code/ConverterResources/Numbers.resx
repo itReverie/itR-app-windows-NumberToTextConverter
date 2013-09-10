@@ -112,12 +112,12 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-<data name="and" xml:space="preserve">
+  <data name="and" xml:space="preserve">
     <value>and </value>
   </data>
   <data name="billion" xml:space="preserve">
@@ -136,7 +136,7 @@
     <value>eighteen </value>
   </data>
   <data name="eighty" xml:space="preserve">
-    <value>eighty </value>
+    <value>eighty</value>
   </data>
   <data name="eleven" xml:space="preserve">
     <value>eleven </value>
@@ -145,7 +145,7 @@
     <value>fifteen </value>
   </data>
   <data name="fifty" xml:space="preserve">
-    <value>fifty </value>
+    <value>fifty</value>
   </data>
   <data name="five" xml:space="preserve">
     <value>five </value>
@@ -156,8 +156,8 @@
   <data name="fourteen" xml:space="preserve">
     <value>fourteen </value>
   </data>
-  <data name="fourty" xml:space="preserve">
-    <value>fourty </value>
+  <data name="forty" xml:space="preserve">
+    <value>forty</value>
   </data>
   <data name="hundred" xml:space="preserve">
     <value>hundred </value>
@@ -175,7 +175,7 @@
     <value>nineteen </value>
   </data>
   <data name="ninety" xml:space="preserve">
-    <value>ninety </value>
+    <value>ninety</value>
   </data>
   <data name="octillion" xml:space="preserve">
     <value>octillion </value>
@@ -199,7 +199,7 @@
     <value>seventeen </value>
   </data>
   <data name="seventy" xml:space="preserve">
-    <value>seventy </value>
+    <value>seventy</value>
   </data>
   <data name="sextillion" xml:space="preserve">
     <value>sextillion </value>
@@ -211,7 +211,7 @@
     <value>sixteen </value>
   </data>
   <data name="sixty" xml:space="preserve">
-    <value>sixty </value>
+    <value>sixty</value>
   </data>
   <data name="ten" xml:space="preserve">
     <value>ten </value>
@@ -220,7 +220,7 @@
     <value>thirteen </value>
   </data>
   <data name="thirty" xml:space="preserve">
-    <value>thirty </value>
+    <value>thirty</value>
   </data>
   <data name="thousand" xml:space="preserve">
     <value>thousand </value>
@@ -235,7 +235,7 @@
     <value>twelve </value>
   </data>
   <data name="twenty" xml:space="preserve">
-    <value>twenty </value>
+    <value>twenty</value>
   </data>
   <data name="two" xml:space="preserve">
     <value>two </value>

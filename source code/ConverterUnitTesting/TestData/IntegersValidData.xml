@@ -7,55 +7,79 @@
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>990.0</Number>
-    <Text>nine hundred ninety dollars and zero cents</Text>
+    <Text>nine hundred and ninety dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>9090.0</Number>
-    <Text>nine thousand ninety dollars and zero cents</Text>
+    <Text>nine thousand and ninety dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>90909.0</Number>
-    <Text>ninety thousand nine hundred nine dollars and zero cents</Text>
+    <Text>ninety thousand and nine hundred and nine dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>909090.0</Number>
-    <Text>nine hundred nine thousand ninety dollars and zero cents</Text>
+    <Text>nine hundred and nine thousand and ninety dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>9090909.0</Number>
-    <Text>nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+    <Text>nine million and ninety thousand and nine hundred and nine dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>90909090.0</Number>
-    <Text>ninety million nine hundred nine thousand ninety dollars and zero cents</Text>
+    <Text>ninety million and nine hundred and nine thousand and ninety dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>909090909.0</Number>
-    <Text>nine hundred nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+    <Text>nine hundred and nine million and ninety thousand and nine hundred and nine dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>9090909090.0</Number>
-    <Text>nine billion ninety million nine hundred nine thousand ninety dollars and zero cents</Text>
+    <Text>nine billion and ninety million and nine hundred and nine thousand and ninety dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>90909090909.0</Number>
-    <Text>ninety billion nine hundred nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+    <Text>ninety billion and nine hundred and nine million and ninety thousand and nine hundred and nine dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>909090909090.0</Number>
-    <Text>nine hundred nine billion ninety million nine hundred nine thousand ninety dollars and zero cents</Text>
+    <Text>nine hundred and nine billion and ninety million and nine hundred and nine thousand and ninety dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>9090909090909.0</Number>
-    <Text>nine trillion ninety billion nine hundred nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+    <Text>nine trillion and ninety billion and nine hundred and nine million and ninety thousand and nine hundred and nine dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>90909090909090.0</Number>
-    <Text>ninety trillion nine hundred nine billion ninety million nine hundred nine thousand ninety dollars and zero cents</Text>
+    <Text>ninety trillion and nine hundred and nine billion and ninety million and nine hundred and nine thousand and ninety dollars and zero cents</Text>
   </ValidIntegerValues>
   <ValidIntegerValues>
     <Number>9909090909090909090909090909.0</Number>
-    <Text>nine octillion nine hundred nine septillion ninety sextillion nine hundred nine quintillion ninety quadrillion nine hundred nine trillion ninety billion nine hundred nine million ninety thousand nine hundred nine dollars and zero cents</Text>
+    <Text>nine octillion and nine hundred and nine septillion and ninety sextillion and nine hundred and nine quintillion and ninety quadrillion and nine hundred and nine trillion and ninety billion and nine hundred and nine million and ninety thousand and nine hundred and nine dollars and zero cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>123.45</Number>
+    <Text>one hundred and twenty-three dollars and forty-five cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>120120.90</Number>
+    <Text>one hundred and twenty thousand and one hundred and twenty dollars and ninety cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>103.57</Number>
+    <Text>one hundred and three dollars and fifty-seven cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>1532055462.89</Number>
+    <Text>one billion and five hundred and thirty-two million and fifty-five thousand and four hundred and sixty-two dollars and eighty-nine cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>871432755462.11</Number>
+    <Text>eight hundred and seventy-one billion and four hundred and thirty-two million and seven hundred and fifty-five thousand and four hundred and sixty-two dollars and eleven cents</Text>
+  </ValidIntegerValues>
+  <ValidIntegerValues>
+    <Number>111213419.15</Number>
+    <Text>one hundred and eleven million and two hundred and thirteen thousand and four hundred and nineteen dollars and fifteen cents</Text>
   </ValidIntegerValues>
 
 
@@ -86,19 +110,18 @@
   </ValidIntegerValuesWithZeros>
   <ValidIntegerValuesWithZeros>
     <Number>101.0</Number>
-    <Text>one hundred one dollars and zero cents</Text>
+    <Text>one hundred and one dollars and zero cents</Text>
   </ValidIntegerValuesWithZeros>
   <ValidIntegerValuesWithZeros>
     <Number>1001.0</Number>
-    <Text>one thousand one dollars and zero cents</Text>
+    <Text>one thousand and one dollars and zero cents</Text>
   </ValidIntegerValuesWithZeros>
   <ValidIntegerValuesWithZeros>
     <Number>10000000000001.0</Number>
-    <Text>ten trillion one dollars and zero cents</Text>
+    <Text>ten trillion and one dollars and zero cents</Text>
   </ValidIntegerValuesWithZeros>
   <ValidIntegerValuesWithZeros>
-    <Number>10000000000000000000000000001.0</Number>
-    <Text>ten octillion one dollars and zero cents</Text>
+    <Number>600500.13</Number>
+    <Text>six hundred thousand and five hundred dollars and thirteen cents</Text>
   </ValidIntegerValuesWithZeros>
-
 </TestData>

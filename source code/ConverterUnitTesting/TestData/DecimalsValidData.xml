@@ -11,7 +11,7 @@
   </ValidDecimalValues>
   <ValidDecimalValues>
     <Number>0.23</Number>
-    <Text>zero dollars and twenty three cents</Text>
+    <Text>zero dollars and twenty-three cents</Text>
   </ValidDecimalValues>
   <ValidDecimalValues>
      <Number>0.03</Number>
@@ -19,7 +19,7 @@
   </ValidDecimalValues>
   <ValidDecimalValues>
      <Number>0.55</Number>
-     <Text>zero dollars and fifty five cents</Text>
+     <Text>zero dollars and fifty-five cents</Text>
   </ValidDecimalValues>
   
   <!-- Random Valid Decimals with Zero Values -->
@@ -29,19 +29,19 @@
   </ValidDecimalValuesWithZeros>
   <ValidDecimalValuesWithZeros>
     <Number>73.00</Number>
-    <Text>seventy three dollars and zero cents</Text>
+    <Text>seventy-three dollars and zero cents</Text>
   </ValidDecimalValuesWithZeros>
   <ValidDecimalValuesWithZeros>
     <Number>02.08</Number>
     <Text>two dollars and eight cents</Text>
   </ValidDecimalValuesWithZeros>
   <ValidDecimalValuesWithZeros>
-    <Number>80706050403021.14</Number>
-    <Text>eighty trillion seven hundred six billion fifty million four hundred three thousand twenty one dollars and fourteen cents</Text>
+    <Number>-80706050403021.14</Number>
+    <Text>minus eighty trillion and seven hundred and six billion and fifty million and four hundred and three thousand and twenty-one dollars and fourteen cents</Text>
   </ValidDecimalValuesWithZeros>
   <ValidDecimalValuesWithZeros>
     <Number>-780000460000054600075470001.58</Number>
-    <Text>minus seven hundred eighty septillion four hundred sixty quintillion fifty four trillion six hundred billion seventy five million four hundred seventy thousand one dollars and fifty eight cents</Text>
+    <Text>minus seven hundred and eighty septillion and four hundred and sixty quintillion and fifty-four trillion and six hundred billion and seventy five million and four hundred seventy thousand and one dollars and fifty-eight cents</Text>
   </ValidDecimalValuesWithZeros>
 
 </TestData>

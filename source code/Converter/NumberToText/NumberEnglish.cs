@@ -15,7 +15,7 @@ namespace Converter
         /// <summary>
         /// Constructor to load English resources.
         /// </summary>
-        /// <param name="culture"></param>
+        /// <param name="culture">Culture Information</param>
         public NumberEnglish(CultureInfo culture)
         {
             NumbersDictionary.LoadNumbers(culture);

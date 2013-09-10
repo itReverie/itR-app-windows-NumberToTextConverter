@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="and" xml:space="preserve">
-    <value>y </value>
+    <value> y  </value>
   </data>
   <data name="billion" xml:space="preserve">
     <value>billones </value>
@@ -156,7 +156,7 @@
   <data name="fourteen" xml:space="preserve">
     <value>catorce  </value>
   </data>
-  <data name="fourty" xml:space="preserve">
+  <data name="forty" xml:space="preserve">
     <value>cuarenta  </value>
   </data>
   <data name="hundred" xml:space="preserve">

@@ -119,7 +119,7 @@ namespace Converter
             TenNumbers = new Dictionary<int, string>();
             TenNumbers.Add(2, GetResourceString("twenty"));
             TenNumbers.Add(3, GetResourceString("thirty"));
-            TenNumbers.Add(4, GetResourceString("fourty"));
+            TenNumbers.Add(4, GetResourceString("forty"));
             TenNumbers.Add(5, GetResourceString("fifty"));
             TenNumbers.Add(6, GetResourceString("sixty"));
             TenNumbers.Add(7, GetResourceString("seventy"));

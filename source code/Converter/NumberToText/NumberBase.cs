@@ -14,11 +14,15 @@ namespace Converter
     abstract class NumberBase
     {
         #region Constructor
-        public NumberBase()
-        {
-            //LoadResources(new CultureInfo("en-US"));
-        }
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public NumberBase(){}
 
+        /// <summary>
+        ///  Overloaded constructor
+        /// </summary>
+        /// <param name="culture">Cukture information</param>
         public NumberBase(CultureInfo culture)
         {
             NumbersDictionary.LoadNumbers(culture);
@@ -36,27 +40,9 @@ namespace Converter
         {
             string outputText = string.Empty;
             decimal tryingtoZero = 0;
-
-            if (inputNumber == "")
-            {
-                throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_IncorrectFormat);
-            }
-
-            //Getting sets of numbers: integers and decimals
-            List<string> setNumbers = inputNumber.Split(new char[] { '.' }).ToList();
-            if (setNumbers.Count > 2 || (setNumbers[0] == "" && setNumbers[1] == ""))
-            {
-                throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_IncorrectFormat);
-            }
-
-            //Setting a correct List
-            if (setNumbers.Count == 1)
-            {
-                setNumbers.Add("0");
-            }
-
             string moneyValue = NumbersDictionary.Dollars;
-
+            List<string> setNumbers = new List<string>();
+            setNumbers= InputValidations(inputNumber);
             for (int i = 0; i < setNumbers.Count(); i++)
             {
                 //Initializing the sets with zero if there is no valid value
@@ -65,58 +51,41 @@ namespace Converter
                 //Validations for the first set: integers
                 if (i == 0)
                 {
-                    if (!Regex.IsMatch(setNumbers[i], "^-[0-9]+$|^[0-9]+$"))
-                    {
-                        throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_OnlyNumericDigits);
-                    }
+                    if (!Regex.IsMatch(setNumbers[i], "^-[0-9]+$|^[0-9]+$")){
+                        throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_OnlyNumericDigits);}
 
-                    if (setNumbers[i].StartsWith("-"))
-                    {
+                    if (setNumbers[i].StartsWith("-")){
                         setNumbers[i] = setNumbers[i].Remove(0, 1);
-                        outputText = NumbersDictionary.Minus;
-                    }
-                    else if (setNumbers[i].StartsWith("+"))
-                    {
-                        setNumbers[i] = setNumbers[i].Remove(0, 1);
-                    }
+                        outputText = NumbersDictionary.Minus;}
+                    else if (setNumbers[i].StartsWith("+")){
+                        setNumbers[i] = setNumbers[i].Remove(0, 1);}
                 }
-
                 //Validations for the second set : decimals
                 else if (i == 1)
                 {
-                    if (!Regex.IsMatch(setNumbers[i], "^[0-9]+$"))
-                    {
-                        throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_OnlyNumericDigits);
-                    }
-                    if (setNumbers[i].Length > 2)
-                    {
-                        throw new ArgumentOutOfRangeException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_DecimalOutOfBoundaries);
-                    }
-
+                    if (!Regex.IsMatch(setNumbers[i], "^[0-9]+$")){
+                        throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_OnlyNumericDigits);}
+                    if (setNumbers[i].Length > 2){
+                        throw new ArgumentOutOfRangeException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_DecimalOutOfBoundaries);}
                     outputText += moneyValue + NumbersDictionary.And;
                     moneyValue = NumbersDictionary.Cents;
                     //Filling in the set with 000 to the right just for a max of two decimals
-                    if (setNumbers[i].Length == 1)
-                    {
-                        setNumbers[i] = setNumbers[i].Insert(setNumbers[i].Length, "0");
-                    }
+                    if (setNumbers[i].Length == 1){
+                        setNumbers[i] = setNumbers[i].Insert(setNumbers[i].Length, "0");}
                 }
 
                 //Trying to convert the set to a valid number
-                if (!decimal.TryParse(setNumbers[i], out tryingtoZero))
-                {
+                if (!decimal.TryParse(setNumbers[i], out tryingtoZero)){
                     //Its a number out of bundaries
                     throw new ArgumentOutOfRangeException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_IntegerOutOfBoundaries);
                 }
                 //If it's zero just print zero and skip the iteration
-                if (tryingtoZero == 0)
-                {
+                if (tryingtoZero == 0){
                     setNumbers[i] = "0";
-                    outputText += "zero ";
-                }
-                else
-                {//Start the iteration of sets
+                    outputText += "zero ";}
+                else{//Start the iteration of sets
                     outputText += IterationOfSets(setNumbers[i]);
+                    outputText = outputText.Substring(0, outputText.Length - 4);
                 }
             }
             return outputText + moneyValue.Trim();
@@ -158,10 +127,9 @@ namespace Converter
                     scalePosition = Convert.ToInt32(totalSets - 1) - set;
                     if (setNumberInt > 0)
                     {
-                        ouputtext = IterationOfNumbers(setNumberString.Length, setNumberInt, ouputtext) + listScaleTypeText[scalePosition];
+                        ouputtext = IterationOfNumbers(setNumberString.Length, setNumberInt, ouputtext) + listScaleTypeText[scalePosition]+NumbersDictionary.And;
                     }
                 }
-
             }
             return ouputtext;
         }
@@ -187,27 +155,29 @@ namespace Converter
                     outputText += NumberToText(number, NumbersDictionary.NaturalTeenNumbers);
                     return outputText;
                 case 2: //Number from 10-99
-                    if (number < 20)
-                    {
+                    if (number < 20){
                         //Number from 10-19
                         outputText += NumberToText(number, NumbersDictionary.NaturalTeenNumbers);
-                        return outputText;
-                    }
-                    else
-                    {
+                        return outputText;}
+                    else{
+                        //Adding logic for the hyphen
+                        string hyphen = "-";
+                        if (number % 10 == 0){
+                            hyphen = " ";}
                         //Number from 20-99
-                        outputText += NumberToText((number / 10), NumbersDictionary.TenNumbers);
+                        outputText += NumberToText((number / 10), NumbersDictionary.TenNumbers)+hyphen;
                         nextNumber = number % 10;
                         return IterationOfNumbers(position - 1, nextNumber, outputText);
                     }
                 case 3://Number from 100-999
-                    if (number >= 100)
-                    {
-                        outputText += NumberToText(number / 100, NumbersDictionary.NaturalTeenNumbers) + NumberToText(10, NumbersDictionary.TenNumbers);
+                    //Adding logic for the hyphen
+                    string andText = NumbersDictionary.And;
+                    if (number % 100 == 0){
+                        andText = "";}
+                    if (number >= 100){
+                        outputText += NumberToText(number / 100, NumbersDictionary.NaturalTeenNumbers) + NumberToText(10, NumbersDictionary.TenNumbers) + andText;
                         nextNumber = number % 100;
-                    }
-                    else
-                    {
+                    }else{
                         nextNumber = number;
                     }
                     return IterationOfNumbers(position - 1, nextNumber, outputText);
@@ -215,6 +185,25 @@ namespace Converter
                     return outputText;
             }
             return outputText;
+        }
+
+        /// <summary>
+        /// Validates the correct imput to create a set of integers and decimals
+        /// </summary>
+        /// <param name="inputNumber">Number to be converted</param>
+        /// <returns>Set of integer and decimals</returns>
+        private List<string> InputValidations(string inputNumber)
+        {
+            if (inputNumber == ""){
+                throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_IncorrectFormat);}
+            //Getting sets of numbers: integers and decimals
+            List<string> setNumbers = inputNumber.Split(new char[] { '.' }).ToList();
+            if (setNumbers.Count > 2 || (setNumbers[0] == "" && setNumbers[1] == "")){
+                throw new ArgumentException(ErrorMessagesDictionary.Error_InvalidInput + " " + ErrorMessagesDictionary.Reason_IncorrectFormat);}
+            //Setting a correct List
+            if (setNumbers.Count == 1){
+                setNumbers.Add("0");}
+            return setNumbers;
         }
 
         /// <summary>

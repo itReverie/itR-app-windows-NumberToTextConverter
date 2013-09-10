@@ -115,7 +115,7 @@ namespace ConverterResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to eighty .
+        ///   Looks up a localized string similar to eighty.
         /// </summary>
         public static string eighty {
             get {
@@ -142,7 +142,7 @@ namespace ConverterResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fifty .
+        ///   Looks up a localized string similar to fifty.
         /// </summary>
         public static string fifty {
             get {
@@ -156,6 +156,15 @@ namespace ConverterResources {
         public static string five {
             get {
                 return ResourceManager.GetString("five", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to forty.
+        /// </summary>
+        public static string forty {
+            get {
+                return ResourceManager.GetString("forty", resourceCulture);
             }
         }
         
@@ -174,15 +183,6 @@ namespace ConverterResources {
         public static string fourteen {
             get {
                 return ResourceManager.GetString("fourteen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to fourty .
-        /// </summary>
-        public static string fourty {
-            get {
-                return ResourceManager.GetString("fourty", resourceCulture);
             }
         }
         
@@ -232,7 +232,7 @@ namespace ConverterResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ninety .
+        ///   Looks up a localized string similar to ninety.
         /// </summary>
         public static string ninety {
             get {
@@ -304,7 +304,7 @@ namespace ConverterResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to seventy .
+        ///   Looks up a localized string similar to seventy.
         /// </summary>
         public static string seventy {
             get {
@@ -340,7 +340,7 @@ namespace ConverterResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sixty .
+        ///   Looks up a localized string similar to sixty.
         /// </summary>
         public static string sixty {
             get {
@@ -367,7 +367,7 @@ namespace ConverterResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to thirty .
+        ///   Looks up a localized string similar to thirty.
         /// </summary>
         public static string thirty {
             get {
@@ -412,7 +412,7 @@ namespace ConverterResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to twenty .
+        ///   Looks up a localized string similar to twenty.
         /// </summary>
         public static string twenty {
             get {

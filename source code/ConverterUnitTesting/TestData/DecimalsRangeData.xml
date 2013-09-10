@@ -28,6 +28,6 @@
   </ValidRanges>
   <ValidRanges>
     <Number>0.99</Number>
-    <Text>zero dollars and ninety nine cents</Text>
+    <Text>zero dollars and ninety-nine cents</Text>
   </ValidRanges>
 </TestData>

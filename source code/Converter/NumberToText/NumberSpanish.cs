@@ -29,7 +29,8 @@ namespace Converter
         /// <param name="number">Number</param>
         /// <param name="outputText">Number in text format.</param>
         /// <returns>Number in text format.</returns>
-        /// <remarks>This particular method should be edited to contactenate some strings to make the spanish numbers correct.</remarks>
+        /// <remarks>This particular method should be edited to contactenate some strings to make the spanish numbers correct.
+        /// </remarks>
         protected override string IterationOfNumbers(int position, decimal number, string outputText)
         {
             decimal nextNumber = 0;

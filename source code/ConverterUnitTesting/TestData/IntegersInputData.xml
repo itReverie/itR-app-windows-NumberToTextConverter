@@ -63,11 +63,7 @@
   </ValidInputs>
   <ValidInputs>
     <Number>1025.63</Number>
-    <Text>one thousand twenty five dollars and sixty three cents</Text>
-  </ValidInputs>
-  <ValidInputs>
-    <Number>-1025.63</Number>
-    <Text>minus one thousand twenty five dollars and sixty three cents</Text>
+    <Text>one thousand and twenty-five dollars and sixty-three cents</Text>
   </ValidInputs>
     
 </TestData>

@@ -55,5 +55,13 @@
     <Number>0.05</Number>
     <Text>zero dollars and five cents</Text>
   </ValidInputs>
+  <ValidInputs>
+    <Number>0.89</Number>
+    <Text>zero dollars and eighty-nine cents</Text>
+  </ValidInputs>
+  <ValidInputs>
+    <Number>0.23</Number>
+    <Text>zero dollars and twenty-three cents</Text>
+  </ValidInputs>
   
 </TestData>
