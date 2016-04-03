@@ -4,4 +4,5 @@ C# Windows desktop application to simulate the way a cheque program converts a d
 For example:
 Input:          “123.45”
 Output:        “ONE HUNDRED AND TWENTY-THREE DOLLARS AND FORTY-FIVE CENTS”
-![logic](http://www.itreverie.com/githubimages/itReverie-app-console-NumberToTextConverter.jpg)
+
+![logic](http://www.itreverie.com/githubimages/itReverie-app-windows-numbertotextconverter.jpg)
